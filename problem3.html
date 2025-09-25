@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function submit() {
+                let analysis = document.getElementById("analysis").value;
+                let design = document.getElementById("design").value;
+                let implementation = document.getElementById("implementation").value;
+                let evaluation = document.getElementById("evaluation").value;
+
+                let total = Number(analysis) + Number(design) + Number(implementation) + Number(evaluation);
+                let grade = ""
+                let needed = 0
+
+                switch(total) {
+                    case total >= 0 && total < 4:
+                        grade = "U"
+                        needed = 4 - total
+                    case total >= 4 && total < 13:
+                        grade = "G"
+                        needed = 13 - total
+                    case total >= 13 && total < 22:
+                        grade = "F"
+                        needed = 22 - total
+                    case total >= 22 && total < 31:
+                        grade = "E"
+                        needed = 31 - total
+                    case total >= 31 && total < 41:
+                        grade = "D"
+                        needed = 41 - total
+                    case total >= 41 && total < 54:
+                        grade = "C"
+                        needed = 54 - total
+                    case total >= 54 && total < 67:
+                        grade = "B"
+                        needed = 67 - total
+                    case total >= 67 && total < 80:
+                        grade = "A"
+                        needed = 80 - total
+                    case total >= 80:
+                        grade = "A*"
+                }
+                document.write("You got ", String(total), " marks (grade ", String(grade), ")<br>You needed ", String(needed), " marks to get to the next grade")
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            <b>Enter marks for analysis:</b>
+        </p>
+        <input type="text" id="analysis">
+        <p>
+            <b>Enter marks for design:</b>
+        </p>
+        <input type="text" id="design">
+        <p>
+            <b>Enter marks for implementation:</b>
+        </p>
+        <input type="text" id="implementation">
+        <p>
+            <b>Enter marks for evaluation:</b>
+        </p>
+        <input type="text" id="evaluation"><br><br>
+        <button type="button" onclick="submit()">Submit</button>
+    </body>
+</html>
