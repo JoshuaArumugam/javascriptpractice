@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function calculate() {
+                let balance = Number(document.getElementById("balance").value);
+                let interest = Number(document.getElementById("interest").value);
+                let desired = Number(document.getElementById("desired").value);
+                let newBalance = 0;
+                let i = 1;
+                let p = 0
+
+                while (balance < desired) {
+                    if (balance < desired)  {
+                        newBalance = balance * (1 + interest);
+                        text = "Year " + String(i) + ": New balance = " + String(balance) + " + (" + String(balance) + "*" + String(interest) + ") = £" + String(newBalance);
+                        balance = newBalance;
+                        i++;
+                        p = document.createElement("p");
+                        p.innerHTML = text;
+                        document.body.appendChild(p);
+                        console.log("hello")
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            <b>
+                Enter current balance:
+            </b>
+        </p>
+        <input type="number" id="balance"><br>
+        <p>
+            <b>
+                Enter interest rate (decimal):
+            </b>
+        </p>
+        <input type="text" id="interest"><br>
+        <p>
+            <b>
+                Enter desired balance:
+            </b>
+        </p>
+        <input type="number" id="desired"><br>
+        <button onclick="calculate()">Calculate</button><br>
+    </body>
+</html>

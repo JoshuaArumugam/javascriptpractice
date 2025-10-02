@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function getNums() {
+                let total = 0;
+                let num = 0;
+                for (let i = 0; i < Number(document.getElementById("number").value); i++) {
+                    num = Number(prompt("Enter number " + String(i + 1)));
+                    total = total + num;
+                }
+                let average = total / Number(document.getElementById("number").value);
+                document.getElementById("answer").innerHTML = average
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            <b>
+                Enter how many numbers to be averaged:
+            </b>
+        </p>
+        <input type="number" id="number">
+        <button onclick="getNums()">
+            Input numbers
+        </button>
+        <p id="answer"></p>
+    </body>
+</html>

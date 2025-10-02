@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let nums = ["One", "Two", "Three", "Four", "Five", "Six"];
+            let rand = 0;
+            let p = 0
+            function dice() {
+                rand = Math.floor((Math.random() / 2) * 10);
+                p = document.getElementById("answer");
+                p.innerHTML = nums[rand];
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="dice()">Roll the dice</button><br>
+        <p id="answer"></p>
+    </body>
+</html>
